@@ -23,6 +23,15 @@ while True:
         for handLms in results.multi_hand_landmarks:
             mp_draw.draw_landmarks(img, handLms, mp_hands.HAND_CONNECTIONS)
 
+            landmark_list = []
+
+            for lm in handLms.landmark:
+                h, w, c = img.shape
+                cx, cy = int(lm.x * w), int(lm.y * h)
+                landmark_list.append((cx, cy))
+
+            print(landmark_list)
+
     cv2.imshow("Hand Tracking", img)
 
     # Exit when 'q' is pressed
@@ -30,4 +39,4 @@ while True:
         break
 
 cap.release()
-cv2.destroyAllWindows()
+cv2.destroyAllWindows()   

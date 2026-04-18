@@ -1,7 +1,0 @@
-opencv-python
-opencv-contrib-python
-mediapipe
-matplotlib
-numpy
-scipy
-sounddevice
